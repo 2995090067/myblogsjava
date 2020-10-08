@@ -1,0 +1,23 @@
+#数据库配置，此处注意空格，yaml以空格划分层级
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vueblogs?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+#mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+server:
+  port: 8081
+#shiro=redis
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379
+#配置jwtutil
+zy:
+  jwt:
+    secret: f4e2e52034348f86b67cde581c0f9eb5  #秘钥
+    expire: 604800 #失效时常1周 单位M
+    header: Authorization
